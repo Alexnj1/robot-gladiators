@@ -163,15 +163,24 @@ var randomNumber = function(min, max) {
   return value;
 };
 
+// function to set name
+var getPlayerNmame =function () {
+  var name = "";
+
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+}
+
 var playerInfo = {
-  name: window.prompt ("What is your robot's name?"),
+  name: getPlayerNmame(),
   health: 100,
   attack: 10,
   money: 10,
   reset: function () {
     this.health = 100;
     this.money =  10;
-    this. attack = 10;
+    this.attack = 10;
   },
   refillHealth: function () {
     if (this.money >= 7) {
